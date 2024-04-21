@@ -3,6 +3,7 @@ from getpass import getpass
 import glob
 import PyPDF2
 
+
 OPENAI_API_KEY = getpass()
 os.environ["OPENAI_API_KEY"]  = OPENAI_API_KEY
 
@@ -14,6 +15,7 @@ from langchain.chains.llm import LLMChain
 from langchain_core.prompts import PromptTemplate, ChatPromptTemplate
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
+
 
 def summarize_resumes(pdf_folder):
     
@@ -117,3 +119,4 @@ def gen_response():
     text = extract_job_req('data/software-engg-manager-job-description.pdf')
     result = match_resumes('data/resumes', text)
     return result
+
