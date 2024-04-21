@@ -87,7 +87,7 @@ def match_resumes(pdf_folder, job_desc_json):
         Sum the scores to get a total that indicates the match level between the candidate's resume 
         and the job description
 
-        Rank all the resumes in descending order of scores and show only the top 2 matching candidates.
+        Rank all the resumes in descending order of scores.
         
         Final output should be generated in the below format as a JSON with the below keys:
          
@@ -113,10 +113,7 @@ def match_resumes(pdf_folder, job_desc_json):
             responses.append(response)
         return(responses)
 
- 
-text = extract_job_req('data/software-engg-manager-job-description.pdf')
-result = match_resumes('data/resumes', text)
-
-for i in result:
-     print(i['text'])
-
+def gen_response():
+    text = extract_job_req('data/software-engg-manager-job-description.pdf')
+    result = match_resumes('data/resumes', text)
+    return result
