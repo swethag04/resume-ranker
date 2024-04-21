@@ -73,8 +73,9 @@ with col3:
 
     for i in analysis_result:
         new_result.append(i['text'])
-        st.write(i['text']['Name of the candidate'])
-        st.write(i['text']['Total score'])
+        # st.write(i['text']['Name of the candidate'])
+        # st.write(i['text']['Total score'])
+        st.write(i['text'])
     print(new_result)
     
 #     sorted_result = sorted(new_result, key=lambda x:x['Total score'], reverse=True)
