@@ -1,9 +1,11 @@
 ## to run, type in command line: $ streamlit run main.py
 import resume_analyzer as ra
 import streamlit as st
+import pprint
+import json,operator
 
 st.set_page_config(layout="wide")
-st.markdown("<h1 style='text-align: center;'>Resume Analyzer</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Resume Ranker</h1>", unsafe_allow_html=True)
 
 st.markdown("<p style='text-align: center;'> This application will analyze submitted resumes against your job posting and recommend the top candidates for your position.", unsafe_allow_html=True)
 
@@ -63,4 +65,18 @@ with col2:
 #OUTPUT and recommendations
 with col3:
     analysis_result = ra.gen_response()
-    output = st.write(analysis_result)
+    new_result = []
+
+   # sorted_result = sorted(analysis_result, key=lambda x:x['Total score'], reverse=True)
+   # analysis_result.sort(key=operator.itemgetter('Total score'))
+    #st.write(json.dumps(analysis_result, indent=2))
+
+    for i in analysis_result:
+        new_result.append(i['text'])
+        st.write(i['text'])
+    print(new_result)
+    
+#     sorted_result = sorted(new_result, key=lambda x:x['Total score'], reverse=True)
+#     for i in sorted_result:
+#         st.write(i)
+# #
