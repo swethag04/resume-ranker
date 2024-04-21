@@ -1,6 +1,5 @@
 ## to run, type in command line: $ streamlit run main.py
-
-
+import resume_analyzer as ra
 import streamlit as st
 
 st.set_page_config(layout="wide")
@@ -28,7 +27,11 @@ with col1:
         save_path = 'Path(save_folder,job_posting.name)'
         if save_path:
             st.success(f'File {job_posting.name} is successfully saved!')
-        
+
+def gen_response():
+    text = extract_job_req(job_posting)
+    result = match_resumes('data/resumes', text)
+    return result    
         #how do we place these files locally in the pdf folder?
  
 #RESUME SUBMISSION"
@@ -48,7 +51,7 @@ with col2:
             
 
     #save file locally
-        save_folder = 'F:/tmp/resumes'
+        save_folder = '/data/resumes'
         save_path = 'Path(save_folder,uploaded_file.name)'
         if save_path:
             st.success(f'File {uploaded_file.name} is successfully saved!')
@@ -58,4 +61,6 @@ with col2:
         # st.expander(bytes_data)
 
 #OUTPUT and recommendations
-#with col3:
+with col3:
+    analysis_result = ra.gen_response()
+    output = st.write(analysis_result)
