@@ -67,18 +67,12 @@ with col3:
     analysis_result = ra.gen_response()
     new_result = []
 
-   # sorted_result = sorted(analysis_result, key=lambda x:x['Total score'], reverse=True)
-   # analysis_result.sort(key=operator.itemgetter('Total score'))
-    #st.write(json.dumps(analysis_result, indent=2))
-
     for i in analysis_result:
         new_result.append(i['text'])
-        # st.write(i['text']['Name of the candidate'])
-        # st.write(i['text']['Total score'])
-        st.write(i['text'])
-    print(new_result)
-    
-#     sorted_result = sorted(new_result, key=lambda x:x['Total score'], reverse=True)
-#     for i in sorted_result:
-#         st.write(i)
+    result = [json.loads(idx.replace("'",'"')) for idx in new_result]
+    print(f"\n\n\n Candidates are: \n {result}")
+
+    sorted_result = sorted(result, key=lambda x:x['Total score'], reverse=True)
+    for i in sorted_result:
+        st.write(i)
 # #

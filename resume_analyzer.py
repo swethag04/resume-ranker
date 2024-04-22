@@ -92,7 +92,9 @@ def match_resumes(pdf_folder, job_desc_json):
         Rank all the resumes in descending order of scores.
         
         Final output should be generated in the below format as a JSON with the below keys:
+        If any of the input key is missing value, use the value 'not available'
          
+        
          'Name of the candidate': 
          'Title':
          'Current Employer':
@@ -102,6 +104,8 @@ def match_resumes(pdf_folder, job_desc_json):
          'Score for technical skills':
          'Score for degree':
          'Total score':
+         
+         
          """
         prompt = PromptTemplate.from_template(prompt_template)
         responses=[]
@@ -118,5 +122,6 @@ def match_resumes(pdf_folder, job_desc_json):
 def gen_response():
     text = extract_job_req('data/software-engg-manager-job-description.pdf')
     result = match_resumes('data/resumes', text)
+    #print(result)
     return result
 
