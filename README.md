@@ -4,4 +4,4 @@ Resume Ranker analyzes multiple resumes submitted against a given job descriptio
 
 This tool enables the HR Manager to shortlist the top candidates amongst the hundreds of applications they receive for each position.
 
-<img width="1392" alt="Screen Shot 2024-04-20 at 6 36 50 PM" src="https://github.com/swethag04/scaleai-hackathon/assets/18649557/74205361-a73c-41aa-bb4b-2c77e816bdc3">
+![Screen Shot 2024-04-21 at 6 45 27 PM](https://github.com/swethag04/scaleai-hackathon/assets/18649557/89c4e0b9-4387-4ef9-992b-74589c6e3b43)
