@@ -1,4 +1,7 @@
 # Resume Ranker
+
+<i>Built for Scale AI Hackathon </i>
+
 Resume Ranker analyzes multiple resumes submitted against a given job description and assigns a score for each candidate based on their experience, technical skills, social skills and degree.
 
 This tool enables the HR Manager to shortlist the top candidates amongst the hundreds of applications they receive for each position.
